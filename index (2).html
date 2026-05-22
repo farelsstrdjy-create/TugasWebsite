@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksi Hijau - Tangerang Selatan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#2D5A27',
+                        sand: '#F4EBD9',
+                        coral: '#FF6B6B',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="p-6 flex justify-between items-center bg-white shadow-sm">
+        <h1 class="text-2xl font-bold text-forest">Aksi Hijau</h1>
+        <div class="space-x-4 hidden md:block">
+            <a href="#" class="hover:text-forest">Proyek</a>
+            <a href="#" class="hover:text-forest">Edukasi</a>
+            <button class="bg-coral text-white px-4 py-2 rounded-lg font-semibold">Donasi</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-20 px-6 text-center bg-sand">
+        <h2 class="text-4xl font-extrabold text-forest mb-4">Jaga Tangerang Selatan,<br>Tanam Masa Depan.</h2>
+        <p class="text-lg mb-8 text-gray-700">Bersama membangun ekosistem mangrove yang kuat.</p>
+        <button class="bg-coral text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-red-600 transition">Donasi Sekarang</button>
+    </header>
+
+    <!-- Proyek Mangrove Section -->
+    <section class="py-16 px-6 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6">Proyek Mangrove Cisadane</h3>
+        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <div class="flex justify-between mb-2">
+                <span class="font-bold">Progress Donasi</span>
+                <span class="text-forest font-bold" id="percentage">0%</span>
+            </div>
+            <!-- Progress Bar Logic -->
+            <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                <div id="progressBar" class="bg-forest h-4 rounded-full" style="width: 0%"></div>
+            </div>
+            <p class="text-sm text-gray-500">Rp 45.000.000 terkumpul dari target Rp 100.000.000</p>
+        </div>
+    </section>
+
+    <!-- Tips Edukasi -->
+    <section class="py-16 px-6 bg-forest text-white">
+        <h3 class="text-2xl font-bold mb-8 text-center">Tips Pengelolaan Sampah</h3>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white text-gray-800 p-6 rounded-lg">
+                <h4 class="font-bold mb-2">Pilah Sampah</h4>
+                <p class="text-sm">Pisahkan organik dan anorganik. Organik bisa jadi kompos!</p>
+            </div>
+            <div class="bg-white text-gray-800 p-6 rounded-lg">
+                <h4 class="font-bold mb-2">Reduce</h4>
+                <p class="text-sm">Bawa botol minum sendiri saat beraktivitas di Tangsel.</p>
+            </div>
+            <div class="bg-white text-gray-800 p-6 rounded-lg">
+                <h4 class="font-bold mb-2">Reuse</h4>
+                <p class="text-sm">Gunakan kembali wadah plastik untuk pot tanaman.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 text-sm">
+        &copy; 2026 Aksi Hijau Tangerang Selatan.
+    </footer>
+
+    <script>
+        // Logika Progress Bar
+        const target = 100000000;
+        const current = 45000000;
+        const percentage = (current / target) * 100;
+        document.getElementById('progressBar').style.width = percentage + '%';
+        document.getElementById('percentage').innerText = percentage + '%';
+    </script>
+</body>
+</html>
